@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://EnvObj/LandTile.gd" type="Script" id=1]
+[ext_resource path="res://Textures/World/Grass1.png" type="Texture" id=2]
 
 [node name="LandTile" type="Node2D"]
 z_index = -1
@@ -17,5 +18,11 @@ margin_left = -500.0
 margin_top = -500.0
 margin_right = 500.0
 margin_bottom = 500.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+margin_right = 1000.0
+margin_bottom = 1000.0
+texture = ExtResource( 2 )
+stretch_mode = 2
 
 [connection signal="timeout" from="Updater" to="." method="_on_Updater_timeout"]

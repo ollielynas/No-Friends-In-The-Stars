@@ -9,6 +9,8 @@ DEATH		# slow attacking, hard hitting spells
 
 export var base_ingredient_1 = 0
 export var base_ingredient_2 = 0
+export var on_player = false
+
 
 var description = ""
 var effect_description = ""
