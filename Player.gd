@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-var speed = 1000
+var speed = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

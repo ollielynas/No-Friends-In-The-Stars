@@ -11,19 +11,19 @@
 delay = 0.05
 
 [node name="LandTile2" parent="Land" instance=ExtResource( 2 )]
-position = Vector2( 2000, 0 )
+position = Vector2( 1000, 0 )
 delay = 0.1
 
 [node name="LandTile3" parent="Land" instance=ExtResource( 2 )]
-position = Vector2( 0, -2000 )
+position = Vector2( 0, -1000 )
 delay = 0.15
 
 [node name="LandTile4" parent="Land" instance=ExtResource( 2 )]
-position = Vector2( 0, 2000 )
+position = Vector2( 0, 1000 )
 delay = 0.2
 
 [node name="LandTile5" parent="Land" instance=ExtResource( 2 )]
-position = Vector2( -2000, 0 )
+position = Vector2( -1000, 0 )
 delay = 0.25
 
 [node name="LandTile6" parent="Land" instance=ExtResource( 2 )]
@@ -43,21 +43,3 @@ position = Vector2( -1000, -1000 )
 delay = 0.45
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-
-[node name="Land2" type="Node2D" parent="."]
-
-[node name="LandTile1" parent="Land2" instance=ExtResource( 2 )]
-position = Vector2( 2000, 2000 )
-delay = 0.055
-
-[node name="LandTile7" parent="Land2" instance=ExtResource( 2 )]
-position = Vector2( 2000, -2000 )
-delay = 0.355
-
-[node name="LandTile8" parent="Land2" instance=ExtResource( 2 )]
-position = Vector2( -2000, 2000 )
-delay = 0.405
-
-[node name="LandTile9" parent="Land2" instance=ExtResource( 2 )]
-position = Vector2( -2000, -2000 )
-delay = 0.455

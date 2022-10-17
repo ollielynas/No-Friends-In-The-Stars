@@ -42,23 +42,23 @@ func reload(x,y):
 		var tree = load("res://EnvObj/Tree.tscn").instance()
 		var tframe =tree.get_node("AnimatedSprite")
 		tframe.frame = rng.randi_range(0, NUMBER_OF_TREES -1)
-		tree.position.x = rng.randi_range(-1000,1000)
-		tree.position.y = rng.randi_range(-1000,1000)
-		add_child(tree)
+		tree.position.x = rng.randi_range(-500,500)
+		tree.position.y = rng.randi_range(-500,500)
+		get_node("Features").add_child(tree)
 
 
 func _on_Updater_timeout():
 
 
-	if position.x - player.position.x < -2000:
-		position.x += 4000
+	if position.x - player.position.x < -1500:
+		position.x += 3000
 		reload(position.x,position.y)
-	elif position.x - player.position.x > 2000:
-		position.x -= 4000
+	elif position.x - player.position.x > 1500:
+		position.x -= 3000
 		reload(position.x,position.y)
-	if position.y - player.position.y < -2000:
-		position.y += 4000
+	if position.y - player.position.y < -1500:
+		position.y += 3000
 		reload(position.x,position.y)
-	elif position.y - player.position.y > 2000:
-		position.y -= 4000
+	elif position.y - player.position.y > 1500:
+		position.y -= 3000
 		reload(position.x,position.y)
