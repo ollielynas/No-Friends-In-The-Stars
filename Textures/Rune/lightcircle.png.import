@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/trees.png-17fb2eae40159ad56f833cf8750fdb81.stex"
+path="res://.import/lightcircle.png-54952958021abf25aa4ce77522cd294c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/World/trees.png"
-dest_files=[ "res://.import/trees.png-17fb2eae40159ad56f833cf8750fdb81.stex" ]
+source_file="res://Textures/Rune/lightcircle.png"
+dest_files=[ "res://.import/lightcircle.png-54952958021abf25aa4ce77522cd294c.stex" ]
 
 [params]
 

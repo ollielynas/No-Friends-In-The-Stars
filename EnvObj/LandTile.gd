@@ -8,7 +8,7 @@ export var load_speed = 0.5
 var startx;
 var starty;
 
-const NUMBER_OF_TREES = 3
+const NUMBER_OF_TREES = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,7 +36,7 @@ func _ready():
 func reload(x,y):
 	rng.seed = hash(str(x,y))
 
-	var number_of_trees = rng.randi_range(10,20)
+	var number_of_trees = rng.randi_range(5,10)
 
 	for i in number_of_trees:
 		var tree = load("res://EnvObj/Tree.tscn").instance()
@@ -44,7 +44,10 @@ func reload(x,y):
 		tframe.frame = rng.randi_range(0, NUMBER_OF_TREES -1)
 		tree.position.x = rng.randi_range(-500,500)
 		tree.position.y = rng.randi_range(-500,500)
+		tree.get_node("AnimatedSprite").flip_h = (rng.randi_range(-10,10) < 5)
 		get_node("Features").add_child(tree)
+
+		
 
 
 func _on_Updater_timeout():

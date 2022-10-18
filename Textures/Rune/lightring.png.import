@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/trees.png-17fb2eae40159ad56f833cf8750fdb81.stex"
+path="res://.import/lightring.png-2ad05e4b7625ae47922a43f1ab11eb9e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/World/trees.png"
-dest_files=[ "res://.import/trees.png-17fb2eae40159ad56f833cf8750fdb81.stex" ]
+source_file="res://Textures/Rune/lightring.png"
+dest_files=[ "res://.import/lightring.png-2ad05e4b7625ae47922a43f1ab11eb9e.stex" ]
 
 [params]
 

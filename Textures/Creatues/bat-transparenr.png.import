@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/trees.png-17fb2eae40159ad56f833cf8750fdb81.stex"
+path="res://.import/bat-transparenr.png-71006dc4c3c08cf7f46df5d7841c54da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/World/trees.png"
-dest_files=[ "res://.import/trees.png-17fb2eae40159ad56f833cf8750fdb81.stex" ]
+source_file="res://Textures/Creatues/bat-transparenr.png"
+dest_files=[ "res://.import/bat-transparenr.png-71006dc4c3c08cf7f46df5d7841c54da.stex" ]
 
 [params]
 
