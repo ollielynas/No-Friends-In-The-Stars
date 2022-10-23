@@ -5,6 +5,10 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+onready var iframe = get_node("Iframe")
+var immune = false
+var health = 30
+
 var speed = 300
 
 # Called when the node enters the scene tree for the first time.
@@ -27,3 +31,29 @@ func _process(delta):
 		velocity = velocity.normalized() * speed
 	
 	position += velocity * delta
+
+var areas = []
+
+func _on_Area2D_area_exited(area:Area2D):
+	for i in range(len(areas)-1):
+
+		if i < len(areas):
+			if areas[i] == area:
+				areas.remove(i)
+
+
+func _on_Area2D_area_entered(area:Area2D):
+	if area.name == "Hitbox":
+		areas.append(area)
+
+func damage():
+	immune = true
+	iframe.start()
+	for i in areas:
+		print("hit")
+
+
+func _on_Iframe_timeout():
+	immune = false
+	if len(areas) != 0:
+		iframe.start()

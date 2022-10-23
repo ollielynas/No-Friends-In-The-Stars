@@ -20,7 +20,6 @@ texture = ExtResource( 1 )
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
-visible = false
 polygon = PoolVector2Array( -10, -121, 55, -110, 92, -81, 122, -15, 115, 58, 68, 100, 6, 117, -50, 110, -94, 75, -117, 19, -113, -46, -74, -98, -16, -120, -10, -111, -61, -94, -99, -51, -108, -8, -98, 43, -62, 88, -7, 105, 50, 93, 93, 56, 107, 7, 99, -36, 73, -80, 22, -108, -6, -111 )
 
 [node name="Attack" type="Timer" parent="."]
@@ -32,7 +31,7 @@ texture = ExtResource( 3 )
 offset = Vector2( 25, 0 )
 texture_scale = 2.8
 color = Color( 0.607843, 0.6, 0.054902, 1 )
-energy = 0.7
+energy = 1.54
 shadow_color = Color( 0.886275, 0.92549, 0.203922, 1 )
 shadow_gradient_length = 187.9
 shadow_filter = 1

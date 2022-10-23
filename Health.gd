@@ -8,6 +8,15 @@ export var radius = 0
 export var health = 10
 export var show_hitbox = true
 export var progress_bar_y = 20
+export var show_bar = true
+
+export var is_child = false
+# get reletive
+
+export(NodePath) onready var parent_node = get_node("invalid")
+
+
+
 var bar
 export var kill = true
 
@@ -29,20 +38,30 @@ func _ready():
 
 	bar.rect_position.y = progress_bar_y
 	bar.max_value = health
+
+	
 	
 
 func _process(_delta):
 	bar.value = health
-	if bar.visible and bar.max_value == health:
+	if bar.visible and (bar.max_value == health or !show_bar):
 		bar.visible = false
 	elif !bar.visible and !bar.max_value == health:
 		bar.visible = true
 
+
 func damage_func(x):
+	if is_child:
+		if parent_node != null:
+			parent_node.damage_func(x)
+		else:
+			print("invalid parent: ", parent_node)
+	else:
+		health -= x
+
 	var popup = damage.instance()
-	popup.value = x
-	health -= x
 	popup.position = .get_parent().position
+	popup.value = x
 	get_parent().get_parent().add_child(popup)
 
 	if health <=0 and kill:

@@ -11,7 +11,7 @@ var hitbox: Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer = get_node("Attack")
-	timer.wait_time = 0.3 * (100 - speed_multiplier)/100
+	timer.wait_time = 0.1 * (100 - speed_multiplier)/100
 	print("attack speed: ",timer.wait_time)
 	hitbox = get_node("Hitbox")
 
@@ -48,4 +48,4 @@ func _on_Hitbox_area_exited(area:Area2D):
 		if i < len(areas):
 			if areas[i] == area:
 				areas.remove(i)
-	
+
