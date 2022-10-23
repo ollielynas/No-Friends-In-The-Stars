@@ -7,7 +7,7 @@ extends Node2D
 
 onready var iframe = get_node("Iframe")
 var immune = false
-var health = 30
+var health = 100
 
 var speed = 300
 
@@ -50,10 +50,12 @@ func damage():
 	immune = true
 	iframe.start()
 	for i in areas:
-		print("hit")
+		if i.name == "Hitbox":
+			health -= i.enemy_damage()
 
 
 func _on_Iframe_timeout():
 	immune = false
 	if len(areas) != 0:
 		iframe.start()
+

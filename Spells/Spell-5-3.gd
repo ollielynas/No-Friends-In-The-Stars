@@ -63,7 +63,9 @@ func _on_Range_area_entered(area:Area2D):
 
 
 func _on_Range_area_exited(area:Area2D):
-	for i in range(len(targets)-1):
+	for i in range(len(targets)):
+		if !(i < len(targets)):
+			break
 		if !is_instance_valid(targets[i]):
 			targets.remove(i)
 		if i < len(targets) and (targets[i] == area or !is_instance_valid(targets[i])):

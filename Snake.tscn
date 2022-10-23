@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Snake.gd" type="Script" id=1]
 [ext_resource path="res://Textures/Creatues/SnakeBody.png" type="Texture" id=2]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/Creatues/SnakeHead.png" type="Texture" id=4]
+[ext_resource path="res://Hitbox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Segment.gd" type="Script" id=6]
 
 [sub_resource type="Curve2D" id=1]
@@ -58,6 +59,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0.1, 0.1 ) ]
 }
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 6.66667
 
 [sub_resource type="Animation" id=5]
 resource_name = "MoveLeft"
@@ -140,6 +144,11 @@ anims/MoveLeft = SubResource( 2 )
 anims/MoveRight = SubResource( 4 )
 anims/RESET = SubResource( 3 )
 
+[node name="Hitbox" parent="Path2D/Segment" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/Segment/Hitbox"]
+shape = SubResource( 8 )
+
 [node name="Head" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 628.333, 27 )
 rotation = 1.5708
@@ -166,3 +175,8 @@ show_hitbox = false
 anims/MoveLeft = SubResource( 5 )
 anims/MoveRight = SubResource( 6 )
 anims/RESET = SubResource( 7 )
+
+[node name="Hitbox" parent="Path2D/Head" instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/Head/Hitbox"]
+shape = SubResource( 8 )
