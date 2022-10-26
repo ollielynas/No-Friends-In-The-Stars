@@ -117,17 +117,17 @@ func _ready():
 		[DEATH, DEATH]:
 			description = ""
 			effect_description = ""
-	
-	var path = "res://Spells/Spell-"+str(base_ingredient_1)+"-"+str(base_ingredient_2)+".tscn"
-	var directory = Directory.new();
-	essence_cost = ingredient_essence_cost[str(base_mix[0])] + ingredient_essence_cost[str(base_mix[1])] 
+	if active:
+		var path = "res://Spells/Spell-"+str(base_ingredient_1)+"-"+str(base_ingredient_2)+".tscn"
+		var directory = Directory.new();
+		essence_cost = ingredient_essence_cost[str(base_mix[0])] + ingredient_essence_cost[str(base_mix[1])] 
 
-	var spell_node = load(path)
-	print(path)
-	if directory.file_exists(path):
-		add_child(spell_node.instance())
-	else:
-		print("file not found: " + path)
+		var spell_node = load(path)
+		print(path)
+		if directory.file_exists(path):
+			add_child(spell_node.instance())
+		else:
+			print("file not found: " + path)
 
 
 

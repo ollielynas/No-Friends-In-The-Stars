@@ -13,13 +13,15 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-height = 4.0
+height = 16.0
 
 [node name="Player" type="Node2D"]
+scale = Vector2( 1.1, 1.1 )
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 4, 4 )
 smoothing_enabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -27,22 +29,36 @@ position = Vector2( 3.55271e-15, -6 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 
-[node name="Bottle" parent="." instance=ExtResource( 3 )]
-base_ingredient_1 = 5
-base_ingredient_2 = 3
-
 [node name="Feet" type="Position2D" parent="."]
 position = Vector2( 0, 19 )
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -2, 5 )
+position = Vector2( -2, 1 )
 shape = SubResource( 2 )
 
 [node name="Iframe" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="AbilityBottles" type="Node2D" parent="."]
+
+[node name="Bottle" parent="AbilityBottles" instance=ExtResource( 3 )]
+base_ingredient_1 = 5
+base_ingredient_2 = 3
+active = true
+
+[node name="Bottle2" parent="AbilityBottles" instance=ExtResource( 3 )]
+base_ingredient_1 = 5
+base_ingredient_2 = 3
+
+[node name="Bottle3" parent="AbilityBottles" instance=ExtResource( 3 )]
+base_ingredient_1 = 5
+base_ingredient_2 = 3
+active = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

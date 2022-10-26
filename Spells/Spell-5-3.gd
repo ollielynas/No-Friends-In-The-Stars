@@ -19,13 +19,10 @@ var targets = []
 
 
 func _process(delta):
-	print(len(targets))
 	if len(targets) > 0:
-		
 		var closest = targets[0]
 		for i in targets:
 			if is_instance_valid(i) and is_instance_valid(closest) and i.name == "Health":
-				print(i.get_parent().name)
 				if i.global_position.distance_to(player.position) < closest.global_position.distance_to(player.position):
 					closest = i
 		if is_instance_valid(closest):
@@ -58,6 +55,9 @@ func _on_AttackBox_area_entered(area:Area2D):
 
 
 func _on_Range_area_entered(area:Area2D):
+	if targets.size() > 0:
+		if RandomNumberGenerator.new().randf() < 0.8:
+			return
 	if area.name == "Health":
 		targets.append(area)
 

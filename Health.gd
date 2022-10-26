@@ -10,6 +10,9 @@ export var show_hitbox = true
 export var progress_bar_y = 20
 export var show_bar = true
 
+# -1 == do not deal contact damage
+export var contact_dmg = -1
+
 export var is_child = false
 # get reletive
 
@@ -39,8 +42,14 @@ func _ready():
 	bar.rect_position.y = progress_bar_y
 	bar.max_value = health
 
-	
-	
+	if contact_dmg != -1:
+		var hitbox = preload("res://Hitbox.tscn").instance()
+		var n = get_node("hitbox").duplicate()
+		hitbox.damage = contact_dmg
+		n.name="Hitbox"
+		hitbox.add_child(n)
+		add_child(hitbox)
+
 
 func _process(_delta):
 	bar.value = health

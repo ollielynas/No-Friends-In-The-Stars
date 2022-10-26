@@ -11,6 +11,7 @@ script = ExtResource( 2 )
 radius = 8
 health = 30
 show_hitbox = false
+contact_dmg = 5
 
 [node name="Body" type="Sprite" parent="."]
 position = Vector2( 2, -5 )

@@ -8,15 +8,20 @@ extends Node2D
 onready var iframe = get_node("Iframe")
 var immune = false
 var health = 100
+onready var max_hp = health
+onready var hp_bar = get_tree().root.get_node("Overworld/CanvasLayer/HPbar")
 
-var speed = 300
+# defalt 300
+export var speed = 1000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	hp_bar.max_value = max_hp
+
 
 
 func _process(delta):
+	hp_bar.value = health
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -43,19 +48,24 @@ func _on_Area2D_area_exited(area:Area2D):
 
 
 func _on_Area2D_area_entered(area:Area2D):
-	if area.name == "Hitbox":
-		areas.append(area)
+	print("player hit")
+	areas.append(area)
+	if !immune:
+		damage()
 
 func damage():
+	print("player hit (2)")
 	immune = true
 	iframe.start()
 	for i in areas:
-		if i.name == "Hitbox":
-			health -= i.enemy_damage()
-
+		if !is_instance_valid(i):
+			areas.remove(areas.find(i))
+			break
+		health -= i.enemy_damage()
 
 func _on_Iframe_timeout():
 	immune = false
+	
 	if len(areas) != 0:
 		iframe.start()
-
+		damage()

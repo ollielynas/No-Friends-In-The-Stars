@@ -14,6 +14,7 @@ wait_time = 0.5
 z_index = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
 margin_left = -500.0
 margin_top = -500.0
 margin_right = 500.0
@@ -24,5 +25,7 @@ margin_right = 1000.0
 margin_bottom = 1000.0
 texture = ExtResource( 2 )
 stretch_mode = 2
+
+[node name="Node" type="Node" parent="."]
 
 [connection signal="timeout" from="Updater" to="." method="_on_Updater_timeout"]

@@ -6,7 +6,7 @@ onready var canvas = get_node("CanvasModulate")
 onready var animation = get_node("CanvasModulate/AnimationPlayer")
 export var diff = 1
 onready var time_label = get_node("CanvasLayer/CanvasLayer/Time")
-
+export var world_seed = "0"
 
 var mobs = [
 #	name:[preload("res path"), diff]
